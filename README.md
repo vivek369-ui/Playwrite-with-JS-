@@ -21,3 +21,15 @@ Role Locator (recommended!) :
 page.getByRole('button', { name: 'Login' })
 page.getByRole('textbox', { name: 'Username' })
 page.getByRole('link', { name: 'Home' })
+
+✔ Placeholder text :
+
+page.getByPlaceholder('Enter your email')
+
+✔ Label text (form fields) :
+
+page.getByLabel('Password')
+
+✔ nth element
+
+page.locator('.item').nth(0);
