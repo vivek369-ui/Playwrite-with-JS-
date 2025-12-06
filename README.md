@@ -43,10 +43,11 @@ LOCATORS :
                 page.getByPlaceholder("Enter your email");
 
         Built_In_Locators : 
-                page.getByRole() to locate by explicit and implicit accessibility attributes.
-                page.getByText() to locate by text content.
-                page.getByLabel() to locate a form control by associated label's text.
-                page.getByPlaceholder() to locate an input by placeholder.
-                page.getByAltText() to locate an element, usually image, by its text alternative.
-                page.getByTitle() to locate an element by its title attribute.
-                page.getByTestId() to locate an element based on its data-testid attribute (other attributes can be configured).
+          await page.getByAltText("Australian Aboriginal flag");// alt attribut value 
+          await page.getByPlaceholder("linktr.ee/yourname").focus//use placeholder value
+          await page.getByRole('button', { name: 'Open language dropdown' });;// get implicit & explicit. get the web element base on that role like button,checkbox 
+          use tag and attribute=value for locat the element
+          await page.getByText("Log in").click;// using inner text 
+          await page.getByLabel("");// using the lable tag.
+          await page.getByTitle("");//Allows locating elements by their title attribute.
+          awiat page.getByTestId("")//You can locate the element by it's test id attribute.
