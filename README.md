@@ -1,7 +1,10 @@
 # Playwrite-with-JS-
 
      Extenstion used for JS : ESLint , Prettier – Code formatter , JavaScript (ES6) Code Snippets ,Live Server 
-
+      Terminal : 
+       Code gen / test gen :  npx playwright  codegen ( genrate ,Record and play automgenrated script.also pic the locator from the Website)
+                              npx paywright codegen --help
+              
 LOCATORS :
           
            const loginButton = page.locator('#login');
@@ -48,6 +51,6 @@ LOCATORS :
           await page.getByRole('button', { name: 'Open language dropdown' });;// get implicit & explicit. get the web element base on that role like button,checkbox 
           use tag and attribute=value for locat the element
           await page.getByText("Log in").click;// using inner text 
-          await page.getByLabel("");// using the lable tag.
+          await page.getByLabel("");// using the lable tag innner value.
           await page.getByTitle("");//Allows locating elements by their title attribute.
           awiat page.getByTestId("")//You can locate the element by it's test id attribute.
