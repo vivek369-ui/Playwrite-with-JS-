@@ -1,35 +1,52 @@
 # Playwrite-with-JS-
-Extenstion used for JS : ESLint , Prettier – Code formatter , JavaScript (ES6) Code Snippets ,Live Server 
+
+     Extenstion used for JS : ESLint , Prettier – Code formatter , JavaScript (ES6) Code Snippets ,Live Server 
+
 LOCATORS :
+          
+           const loginButton = page.locator('#login');
 
-        const loginButton = page.locator('#login');
-CSS Selector (most common) : 
+            CSS Selector (most common) : 
+                page.locator('#idName')          // by ID
+                page.locator('.className')       // by class
+                page.locator('button')           // by tag
+                page.locator('input[name="q"]')  // by attribute
+                
+           XPath Selectors : 
+               page.locator("//div[@class='item']");
+               page.locator("(//a)[1]");
 
-page.locator('#idName')          // by ID
-page.locator('.className')       // by class
-page.locator('button')           // by tag
-page.locator('input[name="q"]')  // by attribute
+           Text Locator : 
+                page.getByText("Login");
+                page.getByText("Submit", { exact: true });
+                page.locator('text=Login')
+                page.getByText('Sign in')
 
-Text Locator : 
+           Locate multiple WebElement : 
+                       page.$$(locator)
+                
+            Role Locator (recommended!) :
+                page.getByRole('button', { name: 'Login' })
+                page.getByRole('textbox', { name: 'Username' })
+                page.getByRole('link', { name: 'Home' })
 
-page.locator('text=Login')
-page.locator('text=Submit')
-page.getByText('Sign in')
+           Test ID Selectors:
+                Playwright supports data-testid, data-test, and data-test-id.
+                page.getByTestId("login-button");
 
-Role Locator (recommended!) :
+         Label Selectors
+                page.getByLabel("Email");
+                page.getByLabel("Password");
 
-page.getByRole('button', { name: 'Login' })
-page.getByRole('textbox', { name: 'Username' })
-page.getByRole('link', { name: 'Home' })
+         Placeholder Selectors
+                page.getByPlaceholder("Search");
+                page.getByPlaceholder("Enter your email");
 
-✔ Placeholder text :
-
-page.getByPlaceholder('Enter your email')
-
-✔ Label text (form fields) :
-
-page.getByLabel('Password')
-
-✔ nth element
-
-page.locator('.item').nth(0);
+        Built_In_Locators : 
+                page.getByRole() to locate by explicit and implicit accessibility attributes.
+                page.getByText() to locate by text content.
+                page.getByLabel() to locate a form control by associated label's text.
+                page.getByPlaceholder() to locate an input by placeholder.
+                page.getByAltText() to locate an element, usually image, by its text alternative.
+                page.getByTitle() to locate an element by its title attribute.
+                page.getByTestId() to locate an element based on its data-testid attribute (other attributes can be configured).
