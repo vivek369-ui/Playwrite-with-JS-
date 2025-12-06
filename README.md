@@ -37,11 +37,11 @@ LOCATORS :
                 Playwright supports data-testid, data-test, and data-test-id.
                 page.getByTestId("login-button");
 
-         Label Selectors
+         Label Selectors :
                 page.getByLabel("Email");
                 page.getByLabel("Password");
 
-         Placeholder Selectors
+         Placeholder Selectors : 
                 page.getByPlaceholder("Search");
                 page.getByPlaceholder("Enter your email");
 
