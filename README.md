@@ -1,4 +1,4 @@
-# Playwrite-with-JS-
+ement# Playwrite-with-JS-
 
      Extenstion used for JS : ESLint , Prettier – Code formatter , JavaScript (ES6) Code Snippets ,Live Server 
       Terminal : 
@@ -62,9 +62,9 @@ Assertions :
        await expect(page).tohaveURL('https://www.org.com/') // Verifies that the page has navigated to the given URL.
        await expect(page).toHaveTitle('My Page Title'); // verifies that the page has a equal title.
         await expect(page.locator('selector')).toBeVisible()// Element  is visible.
-       await expect(page.locator('#submit')).toBeEnabled(); // control is enable.
+       await expect(page.locator('#submit')).toBeEnabled(); // element  is enable or not.
        await expect(submitButton).toBeDisabled(); // Element is disable.
-       await expect(checkbox).toBeChecked();    //  radio/checkbox  is checked.
+       await expect(checkbox).toBeChecked();    //  radio/checkbox  is checked ot not.
        await expect(link).toHaveAttribute('href', '/home'); // Element has attribut.
       await expect(page.locator('#message')).toContainText('Success'); // Element contains text.
       await expect(page.locator('.product')).toContainText([
