@@ -72,10 +72,19 @@ Assertions :
        'Banana',
        'Orange'
      ]);
+     
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+DropDown : 
 
-       
- 
+            /**drop down (value , visible / label text, index)*/
+            await page.locator("//*[@id='dropdown']").selectOption({ label: "Option 1" });
+            await page.locator("#country").selectOption({ label: "Afghanistan" });
+            await page.locator(".form-control").selectOption({ value: "50" });
+            await page.locator(".form-control").selectOption({ index: 3 });
+            await expect(page.locator(.form-control option)).toHaveCount(4);
+            const numberOfOption = await page.locator(".form-control option");
+            await expect(numberOfOption).toHaveCount(4);
 
 
 
