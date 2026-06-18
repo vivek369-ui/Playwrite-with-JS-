@@ -87,8 +87,85 @@ DropDown :
             await expect(numberOfOption).toHaveCount(4);
 
 
+-------------------------------------------------------------------------------TS-------------------------------------------------------------------------------
 
+DataType : 
 
+     1.null : 
+                    Intentionally empty.
+                    let struendtName:null=null;
+                    studentName="raghav";
+                    console.log(studentName);
 
+     2.undefined : 
+                   Variable exists, but value is not given yet.
+
+     3. any : 
+              any type of data allowed
+
+     4. unknown : 
+               also means we do not know the type yet.
+               But it is safer than any.
+
+    5. boolean, string , number, null, any :
+              
+              let studentName: string = "Aarav";
+               let studentSecondName: string = "sham";
+               let joine:string =studentName+studentSecondName;
+               let studentAge:number=200;
+               let studentSecAge=200;
+               let passStatus:boolean=true;
+               if(passStatus)
+                    {console.log("student is passed");
+                    }
+                    else{
+               console.log("student is failed");
+                    }
+               
+               let struendtName:null=null;
+               studentName="raghav";
+               console.log(studentName);
+               
+               let anything:any="Hello";
+               console.log(anything);
+               
+               console.log(joine);
+               console.log(`first student name${studentName} and second student name${studentSecondName}`);
+               console.log(studentAge+studentSecAge);
+
+       6.  array : 
+          let fruits:string[]=["apple","banna"];
+          for(let fruit of fruits){
+          console.log(fruit);
+          }
+            let fruits:(string|number)[]=["apple",1,"banana",2,"cherry",3];
+          for(let fruit of fruits){
+          console.log(fruit);
+          }
+
+          7. objcet :  Objects and arrays are stored by reference.
+                       after initilization we can add more value
+            
+               let secDetalis: {
+                   name: string;
+                   age: number| string;
+                   city: string;
+               } = {
+                   name: "Jane Doe",
+                   age: 25,
+                   city: "New York"
+               };
+               
+               console.log(secDetalis);
+               console.log(secDetalis.age);
+
+                    let secDetalis= {
+                   name: "Jane Doe",
+                   age: 25,
+                   city: "New York"
+               };
+               secDetalis.name="vivek";
+               console.log(secDetalis);
+             
 
          
