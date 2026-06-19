@@ -166,6 +166,35 @@ DataType :
                };
                secDetalis.name="vivek";
                console.log(secDetalis);
-             
 
-         
+        8.
+           Ternary Operator : 
+
+            Ternary operator is a short form of if else.
+
+                         Syntax:
+                         
+                         condition ? valueIfTrue : valueIfFalse;
+                         
+                         Example:
+                         
+                         let age: number = 13;
+                         
+                         let message: string = age >= 18 ? "Adult" : "Minor";
+                         
+                         console.log(message);
+
+      9 . 18. Truthy and Falsy Values
+
+               In JavaScript/TypeScript, some values behave like false.
+               
+               These are called falsy values:
+               
+               false
+               0
+               ""
+               null
+               undefined
+               NaN
+                         
+                                  
