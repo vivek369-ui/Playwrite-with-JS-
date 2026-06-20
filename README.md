@@ -197,4 +197,77 @@ DataType :
                undefined
                NaN
                          
-                                  
+     10.    for...of Loop
+
+          for...of is easier when we want values from an array.
+          
+          let fruits: string[] = ["Apple", "Banana", "Mango"];
+          
+          for (let fruit of fruits) {
+            console.log(fruit);
+          }
+          
+          Output:
+          
+          Apple
+          Banana
+          Mango
+
+          15. for...in Loop
+
+               for...in is mostly used for object keys.
+               
+               Example:
+               
+               let student = {
+                 name: "Jane Doe",
+                 age: 25,
+                 city: "New York"
+               };
+               
+               for (let key in student) {
+                 console.log(key);
+               }
+               
+               Output:
+               
+               name
+               age
+               city
+               
+               To print values:
+               
+               let student = {
+                 name: "Jane Doe",
+                 age: 25,
+                 city: "New York"
+               };
+               
+               for (let key in student) {
+                 console.log(student[key as keyof typeof student]);
+               }
+               
+               Output:
+               
+               Jane Doe
+               25
+               New York
+               
+               This is the same concept you practiced earlier.
+
+
+               An array stores multiple values in one variable.
+
+               Important points:
+               
+               Array index starts from 0
+               array.length gives item count
+               push() adds item at end
+               pop() removes last item
+               unshift() adds item at start
+               shift() removes first item
+               for...of reads array values
+               TypeScript checks array value types
+               Arrays are reference types
+               const array can still be modified internally
+               Use readonly if array should not be changed
