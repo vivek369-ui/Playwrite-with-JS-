@@ -143,30 +143,6 @@ DataType :
           console.log(fruit);
           }
 
-          7. objcet :  Objects and arrays are stored by reference.
-                       after initilization we can add more value
-            
-               let secDetalis: {
-                   name: string;
-                   age: number| string;
-                   city: string;
-               } = {
-                   name: "Jane Doe",
-                   age: 25,
-                   city: "New York"
-               };
-               
-               console.log(secDetalis);
-               console.log(secDetalis.age);
-
-                    let secDetalis= {
-                   name: "Jane Doe",
-                   age: 25,
-                   city: "New York"
-               };
-               secDetalis.name="vivek";
-               console.log(secDetalis);
-
         8.
            Ternary Operator : 
 
@@ -269,5 +245,85 @@ DataType :
                for...of reads array values
                TypeScript checks array value types
                Arrays are reference types
-               const array can still be modified internally
+               const array can still be modified internally 
                Use readonly if array should not be changed
+        
+        ----------------------------------tuples------------
+         is simpler like array but in that we can store (hetrogeneous)diff diff type of data
+
+         let allData:[string,number]=["d",3,0];
+
+          //accessing tuple elements
+          console.log(allData[0]);
+          console.log(allData[1]);
+          console.log(allData[2]);
+          
+          // add element to tuple
+          allData.push(4);
+          console.log(allData);
+          
+          //removing element from tuple, it removes the last element added to the tuple
+          allData.pop();
+          console.log(allData);   
+          
+          // updateing tuple element
+          allData[0]="dinesh";
+          console.log(allData);  
+
+     --------------Function----------- 
+      Function are the block of program.
+      - we can reuse several time 
+       type of function  : 
+
+        1. name functions :  where we declare and call a function by given name
+
+                       function displayName(){
+                   
+                   let name: string = "John Doe";
+                       console.log(name);
+               }
+               displayName();
+               
+        2.Anonymous Function: 
+
+                              let firstFunction = function (x: number, y: number):number-->return type{
+              
+              let name: string = "John Doe";
+                  console.log(name);
+              return x + y;
+          }
+          console.log(firstFunction(5, 10));
+
+          Parameters in Functions: 
+
+            parameters are values or arg passed to a function          
+                    
+    --------------Classs and Object-----------
+
+
+      1 .
+                            
+          1 . objcet :  Objects and arrays are stored by reference.
+                       after initilization we can add more value
+            
+               let secDetalis: {
+                   name: string;
+                   age: number| string;
+                   city: string;
+               } = {
+                   name: "Jane Doe",
+                   age: 25,
+                   city: "New York"
+               };
+               
+               console.log(secDetalis);
+               console.log(secDetalis.age);
+
+                    let secDetalis= {
+                   name: "Jane Doe",
+                   age: 25,
+                   city: "New York"
+               };
+               secDetalis.name="vivek";
+               console.log(secDetalis);
+    
