@@ -285,8 +285,9 @@ DataType :
                displayName();
                
         2.Anonymous Function: 
+             function(){}
 
-                              let firstFunction = function (x: number, y: number):number-->return type{
+                              let firstFunction-->(to invok the function firstFunction()) = function (x: number, y: number):number-->return type{
               
               let name: string = "John Doe";
                   console.log(name);
@@ -294,9 +295,20 @@ DataType :
           }
           console.log(firstFunction(5, 10));
 
-          Parameters in Functions: 
+          3. arrow function:
+          ()=>     {}
+          
+          ...Parameters in Functions: 
 
-            parameters are values or arg passed to a function          
+            parameters are values or arg passed to a function        
+
+          ... optioanl Parameters in Function;
+                                        ---> this is the optinal variable, if we dont pass any value, it dont have any problem  
+          function green(name:string, cell?:number)
+
+          ....Default parameters in function
+
+          function green(age:number, name:string="vivek")
                     
     --------------Classs and Object-----------
 
