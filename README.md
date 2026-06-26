@@ -315,10 +315,40 @@ DataType :
            
                function green(age:number, ...name:string[])
 
+     ------------------aliases ------------------------
+                      {coustom datatype }
+
+          type UserId = number;
+               
+               UserId is another name (alias) for the number type.
+
+                              | Keyword        | Meaning                             |
+               | -------------- | ----------------------------------- |
+               | `type`         | Keyword used to create a type alias |
+               | `AliasName`    | Custom name chosen by the developer |
+               | `=`            | Assigns the original type           |
+               | `ExistingType` | Any valid TypeScript type           |
+
+                                   type data ={
+                              name:string;
+                              age:number;
+                              isactive:boolean;
+                              }
+               
+               let user:data={
+                   name:"john",
+                   age:30,
+                   isactive:true
+               }
+               for(let key in user){
+                   console.log(user[key as keyof data]);
+               }
+
+
+
     --------------Classs and Object-----------
 
 
-      1 .
                             
           1 . objcet :  Objects and arrays are stored by reference.
                        after initilization we can add more value
