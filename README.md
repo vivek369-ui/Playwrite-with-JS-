@@ -297,7 +297,8 @@ DataType :
 
           3. arrow function:
           ()=>     {}
-          
+           if the function body cosists of only one statment
+           then no need for the curly brackts and the return keywrod.
           ...Parameters in Functions: 
 
             parameters are values or arg passed to a function        
@@ -309,7 +310,11 @@ DataType :
           ....Default parameters in function
 
           function green(age:number, name:string="vivek")
-                    
+
+          ....Rest Parameters 
+           
+               function green(age:number, ...name:string[])
+
     --------------Classs and Object-----------
 
 
