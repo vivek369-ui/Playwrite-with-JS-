@@ -1,19 +1,10 @@
-ement# Playwrite-with-TS-
-
-     Extenstion used for JS : ESLint , Prettier – Code formatter , JavaScript (ES6) Code Snippets ,Live Server 
-      Terminal : 
-       Code gen / test gen :  npx playwright  codegen ( genrate ,Record and play automgenrated script.also pic the locator from the Website)
-                              npx paywright codegen --help
-                              
-              --------------------------------------
-
   TS/PR:
 
-                        * JS (ES3 -ES6)* 
+               * JS (ES3 -ES6)* 
                  ESMAScript-(standerd (rule and regulation) to which all JS new  code must comply)
                  javascript want to the add new features in the JS code but it not possible because they are not follow the ESMAScipt standard to crate the TS 
                  
-                      TS/JS/PR (KT):
+                * TS/PR (KT):
                      library  -->(classes,methos)playwrite library build on the node.js that is why we need node.js install for run the playwrite
                         playwrtie is a framework + (node.js)library  for the end to end testing. 
                         feature : 
@@ -343,7 +334,7 @@ DataType :
                function green(age:number, ...name:string[])
 
      ------------------aliases ------------------------
-                      {coustom datatype }
+                      {custom datatype }
 
           type UserId = number;
                
