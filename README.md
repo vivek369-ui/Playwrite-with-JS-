@@ -1,4 +1,4 @@
-ement# Playwrite-with-JS-
+ement# Playwrite-with-TS-
 
      Extenstion used for JS : ESLint , Prettier – Code formatter , JavaScript (ES6) Code Snippets ,Live Server 
       Terminal : 
@@ -6,8 +6,29 @@ ement# Playwrite-with-JS-
                               npx paywright codegen --help
                               
               --------------------------------------
-              7/12/26 :
-               
+
+ 7/12/26 TS/PR:
+
+                      TS/JS/PR (KT):
+                     library  -->(classes,methos)playwrite library build on the node.js that is why we need node.js install for run the playwrite
+                        playwrtie is a framework + (node.js)library  for the end to end testing. 
+                        feature : 
+                        chross browser (mulitple browser support)
+                        cross platform (windows,mac & linux diff os)
+                        cross lang (js, ts,java,python)
+                        native app (downlaod form Play store dont directly test them)
+                        test mobile web (surrport mobile testing for chrome & safari)
+                        auto waith(redule the flakiness).
+                        handles compelx elements : shadow dom, frames, parell execution in multiple browser faster.
+                        built in report : HTML, json, thrid party reoprt Allure.
+                        inspector : verifying locators in real times. 
+                        code gen tool : record the action and genrate the script and convert in any supproted lang.
+                        tracing(trace viewer) : captures screenshorts, records videos, retries flaky tests, and log steps automatically (capture alll the info to investigate the test failure)
+
+                * JS (ES3 -ES6)* 
+                 ESMAScript-(standerd (rule and regulation) to which all JS new  code must comply)
+                 javascript want to the add new features in the JS code but it not possible because they are not follow the ESMAScipt standard
+                        
               ---------------------------------------
 LOCATORS :
           
