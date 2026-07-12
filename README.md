@@ -5,8 +5,8 @@
                  javascript want to the add new features in the JS code but it not possible because they are not follow the ESMAScipt standard to crate the TS 
                  
                 * TS/PR (KT):
-                     library  -->(classes,methos)playwrite library build on the node.js that is why we need node.js install for run the playwrite
-                        playwrtie is a framework + (node.js)library  for the end to end testing. 
+                     library  -->The Playwright library contains classes and methods and runs on Node.js. Therefore, we need to install Node.js to run Playwright tests                                       written in JavaScript or TypeScript.
+                        playwrite is a framework + (node.js)library  for the end to end testing. 
                         feature : 
                         chross browser (mulitple browser support)
                         cross platform (windows,mac & linux diff os)
@@ -107,6 +107,12 @@ DropDown :
 
 -------------------------------------------------------------------------------TS-------------------------------------------------------------------------------
 
+ installtion: 
+ 
+         1. node.js
+         2. TS compiler
+         3.  VSCode Editor
+       
 DataType : 
 
      1.null : 
