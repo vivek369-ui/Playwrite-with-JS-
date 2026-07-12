@@ -4,7 +4,11 @@ ement# Playwrite-with-JS-
       Terminal : 
        Code gen / test gen :  npx playwright  codegen ( genrate ,Record and play automgenrated script.also pic the locator from the Website)
                               npx paywright codegen --help
-              
+                              
+              --------------------------------------
+              7/12/26 :
+               
+              ---------------------------------------
 LOCATORS :
           
            const loginButton = page.locator('#login');
