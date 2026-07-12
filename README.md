@@ -7,8 +7,12 @@ ement# Playwrite-with-TS-
                               
               --------------------------------------
 
- 7/12/26 TS/PR:
+  TS/PR:
 
+                        * JS (ES3 -ES6)* 
+                 ESMAScript-(standerd (rule and regulation) to which all JS new  code must comply)
+                 javascript want to the add new features in the JS code but it not possible because they are not follow the ESMAScipt standard to crate the TS 
+                 
                       TS/JS/PR (KT):
                      library  -->(classes,methos)playwrite library build on the node.js that is why we need node.js install for run the playwrite
                         playwrtie is a framework + (node.js)library  for the end to end testing. 
@@ -25,9 +29,7 @@ ement# Playwrite-with-TS-
                         code gen tool : record the action and genrate the script and convert in any supproted lang.
                         tracing(trace viewer) : captures screenshorts, records videos, retries flaky tests, and log steps automatically (capture alll the info to investigate the test failure)
 
-                * JS (ES3 -ES6)* 
-                 ESMAScript-(standerd (rule and regulation) to which all JS new  code must comply)
-                 javascript want to the add new features in the JS code but it not possible because they are not follow the ESMAScipt standard
+
                         
               ---------------------------------------
 LOCATORS :
