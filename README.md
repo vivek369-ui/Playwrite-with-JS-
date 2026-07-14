@@ -109,8 +109,8 @@ DropDown :
 
  installtion: 
  
-         1. node.js
-         2. TS compiler
+         1. node.js (npm--> node package manager)
+         2. TS compiler (npm install -g typescript) cmd
          3.  VSCode Editor
        
 DataType : 
