@@ -109,10 +109,16 @@ DropDown :
 
  installtion: 
  
-         1. node.js (npm--> node package manager)
+         1. node.js (npm--> node package manager) and set the envirment variable
          2. TS compiler (npm install -g typescript) cmd
          3.  VSCode Editor
-       
+         4. Ts Executer to run the Ts file directly (npm install -g tsx)
+           comand to run TS directly : (tsx Start_Day\F_Prog.ts)
+
+Variables:
+
+         var, let const 
+          2type of scope in TS functioanl & block scope 
 DataType : 
 
      1.null : 
