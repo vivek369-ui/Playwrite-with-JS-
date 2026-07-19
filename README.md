@@ -115,10 +115,36 @@ DropDown :
          4. Ts Executer to run the Ts file directly (npm install -g tsx)
            comand to run TS directly : (tsx Start_Day\F_Prog.ts)
 
-Variables:
-
-         var, let const 
-          2type of scope in TS functioanl & block scope 
+Variables: 
+          
+          var, let, const 
+         1. scop  :
+          2type of scope in TS functioanl(var) & block scope(let, const) 
+         A child block can access variables from its parent block, but a parent block cannot access variables declared inside its child block.
+         Declare let/const in the function → Accessible everywhere inside that function, including nested blocks.
+         Declare let/const inside a block (if, for, while, {}) → Accessible only inside that block.
+          
+         2. Declaration/value assignment : 
+            var and let (we can declar without and initialize)
+            const (we can not declar without and initialize)
+            
+         3. redeclration: 
+         ex : 
+              var name =30;
+              var name =20;
+         var allowed redeclration
+         let and const not allow redeclration for code safety
+         
+         4. re-initialization\re-assignment: 
+              var & let (re-assignmentallowed)
+              const (re-assignment not allowed)
+              
+         5. hosting : 
+            without declaring and assign variable we try to access.
+            var : it shows undefine.
+            let & const  : it shows not intitallize.
+            
+         
 DataType : 
 
      1.null : 
