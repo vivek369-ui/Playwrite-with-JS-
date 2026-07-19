@@ -179,8 +179,17 @@ DataType :
              combine multiple type 
             let studentName:string |null| number=null;
 
+     6. void : 
+            used for the Fun that don't return anythingw
+             function test():void
+                {
+                    let studentName:string |null| number=null;
+                    studentName ="raghav";
+                    console.log(studentName);
+                    }test();
 
-       6.  array : 
+
+       1.  array : 
           let fruits:string[]=["apple","banna"];
           for(let fruit of fruits){
           console.log(fruit);
@@ -190,7 +199,7 @@ DataType :
           console.log(fruit);
           }
 
-
+      2. Function
 
 
 
