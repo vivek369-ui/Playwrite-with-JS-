@@ -146,48 +146,39 @@ Variables:
             
          
 DataType : 
-
+                    
+      let age:number=30
+     data type --> number
+     annotation-->:number
+     type inference--> (let age=30)automatically assgin the type base on value which we provided.
+      console.log(typeof(passStatus))-> which type of datatype
+      
+      1. 2types of the DT : 
+         premitive : (store singal value)number, string boolean, null, undefined , any, union type, void , unknown
+         non-premitive :(store multiplae value) array, function,classes, interface, tuple
+                   
      1.null : 
                     Intentionally empty.
-                    let struendtName:null=null;
-                    studentName="raghav";
-                    console.log(studentName);
+                    let studentName:null=null;
+
 
      2.undefined : 
                    Variable exists, but value is not given yet.
 
      3. any : 
               any type of data allowed
+                    let studentName:any=null;
+                    studentName="raghav";
+                    console.log(studentName);
 
      4. unknown : 
                also means we do not know the type yet.
                But it is safer than any.
+               
+     5. Union : 
+             combine multiple type 
+            let studentName:string |null| number=null;
 
-    5. boolean, string , number, null, any :
-              
-              let studentName: string = "Aarav";
-               let studentSecondName: string = "sham";
-               let joine:string =studentName+studentSecondName;
-               let studentAge:number=200;
-               let studentSecAge=200;
-               let passStatus:boolean=true;
-               if(passStatus)
-                    {console.log("student is passed");
-                    }
-                    else{
-               console.log("student is failed");
-                    }
-               
-               let struendtName:null=null;
-               studentName="raghav";
-               console.log(studentName);
-               
-               let anything:any="Hello";
-               console.log(anything);
-               
-               console.log(joine);
-               console.log(`first student name${studentName} and second student name${studentSecondName}`);
-               console.log(studentAge+studentSecAge);
 
        6.  array : 
           let fruits:string[]=["apple","banna"];
@@ -198,6 +189,14 @@ DataType :
           for(let fruit of fruits){
           console.log(fruit);
           }
+
+
+
+
+
+
+
+          
 
         8.
            Ternary Operator : 
