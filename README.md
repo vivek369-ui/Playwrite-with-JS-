@@ -145,7 +145,7 @@ Variables:
             let & const  : it shows not intitallize.
             
          
-DataType : 
+DataType/Loops : 
                     
       let age:number=30
      data type --> number
@@ -157,15 +157,15 @@ DataType :
          premitive : (store singal value)number, string boolean, null, undefined , any, union type, void , unknown
          non-premitive :(store multiplae value) array, function,classes, interface, tuple
                    
-     1.null : 
+      1.null : 
                     Intentionally empty.
                     let studentName:null=null;
 
 
-     2.undefined : 
+      2.undefined : 
                    Variable exists, but value is not given yet.
 
-     3. any : 
+      3. any : 
               any type of data allowed
                     let studentName:any=null;
                     studentName="raghav";
@@ -180,7 +180,7 @@ DataType :
             let studentName:string |null| number=null;
 
      6. void : 
-            used for the Fun that don't return anythingw
+            used for the Fun that don't return anything
              function test():void
                 {
                     let studentName:string |null| number=null;
@@ -188,27 +188,8 @@ DataType :
                     console.log(studentName);
                     }test();
 
-
-       1.  array : 
-          let fruits:string[]=["apple","banna"];
-          for(let fruit of fruits){
-          console.log(fruit);
-          }
-            let fruits:(string|number)[]=["apple",1,"banana",2,"cherry",3];
-          for(let fruit of fruits){
-          console.log(fruit);
-          }
-
-      2. Function
-
-
-
-
-
           
-
-        8.
-           Ternary Operator : 
+      7. Ternary Operator : 
 
             Ternary operator is a short form of if else.
 
@@ -223,8 +204,8 @@ DataType :
                          let message: string = age >= 18 ? "Adult" : "Minor";
                          
                          console.log(message);
-
-      9 . 18. Truthy and Falsy Values
+  
+      8. Truthy and Falsy Values
 
                In JavaScript/TypeScript, some values behave like false.
                
@@ -236,8 +217,24 @@ DataType :
                null
                undefined
                NaN
-                         
-     10.    for...of Loop
+                    
+          
+        **Loops**
+         1. while Loop : 
+                initialization
+                while(condition)
+                {
+                statment;
+                ++ or --
+                }
+          2. do While Loop :      
+          Execute atlest once before checking the Codition
+          do{
+            statment;
+            ++ or --
+            } while(condition);
+
+        3.    for...of Loop
 
           for...of is easier when we want values from an array.
           
@@ -252,66 +249,7 @@ DataType :
           Apple
           Banana
           Mango
-
-          15. for...in Loop
-
-               for...in is mostly used for object keys.
-               
-               Example:
-               
-               let student = {
-                 name: "Jane Doe",
-                 age: 25,
-                 city: "New York"
-               };
-               
-               for (let key in student) {
-                 console.log(key);
-               }
-               
-               Output:
-               
-               name
-               age
-               city
-               
-               To print values:
-               
-               let student = {
-                 name: "Jane Doe",
-                 age: 25,
-                 city: "New York"
-               };
-               
-               for (let key in student) {
-                 console.log(student[key as keyof typeof student]);
-               }
-               
-               Output:
-               
-               Jane Doe
-               25
-               New York
-               
-               This is the same concept you practiced earlier.
-
-
-               An array stores multiple values in one variable.
-
-               Important points:
-               
-               Array index starts from 0
-               array.length gives item count
-               push() adds item at end
-               pop() removes last item
-               unshift() adds item at start
-               shift() removes first item
-               for...of reads array values
-               TypeScript checks array value types
-               Arrays are reference types
-               const array can still be modified internally 
-               Use readonly if array should not be changed
-        
+            
         ----------------------------------tuples------------
          is simpler like array but in that we can store (hetrogeneous)diff diff type of data
 
