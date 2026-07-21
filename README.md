@@ -234,7 +234,7 @@ DataType/Loops :
             ++ or --
             } while(condition);
 
-        3.    for...of Loop
+          3. for...of Loop
 
           for...of is easier when we want values from an array.
           
@@ -245,10 +245,55 @@ DataType/Loops :
           }
           
           Output:
-          
           Apple
           Banana
           Mango
+
+Function 
+
+       Function are the block of program, we can reuse several time 
+      
+       type of function  : 
+
+       1. name functions :  where we declare and call a function by given name
+
+                       function displayName(){
+                   
+                   let name: string = "John Doe";
+                       console.log(name);
+               }
+               displayName();
+               
+       2.Anonymous Function: 
+             function(){}
+
+             let firstFunction-->(to invok the function firstFunction()) = function (x: number, y: number):number-->return type{
+              
+              let name: string = "John Doe";
+                  console.log(name);
+              return x + y;
+          }
+          console.log(firstFunction(5, 10));
+
+       3. arrow function:
+          ()=>     {}
+           if the function body cosists of only one statment
+           then no need for the curly brackts and the return keywrod.
+          ...Parameters in Functions: 
+
+            parameters are values or arg passed to a function        
+
+          ... optioanl Parameters in Function;
+                                        ---> this is the optinal variable, if we dont pass any value, it dont have any problem  
+          function green(name:string, cell?:number)
+
+          ....Default parameters in function
+
+          function green(age:number, name:string="vivek")
+
+          ....Rest Parameters 
+           
+               function green(age:number, ...name:string[])
             
         ----------------------------------tuples------------
          is simpler like array but in that we can store (hetrogeneous)diff diff type of data
@@ -272,50 +317,6 @@ DataType/Loops :
           allData[0]="dinesh";
           console.log(allData);  
 
-     --------------Function----------- 
-      Function are the block of program.
-      - we can reuse several time 
-       type of function  : 
-
-        1. name functions :  where we declare and call a function by given name
-
-                       function displayName(){
-                   
-                   let name: string = "John Doe";
-                       console.log(name);
-               }
-               displayName();
-               
-        2.Anonymous Function: 
-             function(){}
-
-                              let firstFunction-->(to invok the function firstFunction()) = function (x: number, y: number):number-->return type{
-              
-              let name: string = "John Doe";
-                  console.log(name);
-              return x + y;
-          }
-          console.log(firstFunction(5, 10));
-
-          3. arrow function:
-          ()=>     {}
-           if the function body cosists of only one statment
-           then no need for the curly brackts and the return keywrod.
-          ...Parameters in Functions: 
-
-            parameters are values or arg passed to a function        
-
-          ... optioanl Parameters in Function;
-                                        ---> this is the optinal variable, if we dont pass any value, it dont have any problem  
-          function green(name:string, cell?:number)
-
-          ....Default parameters in function
-
-          function green(age:number, name:string="vivek")
-
-          ....Rest Parameters 
-           
-               function green(age:number, ...name:string[])
 
      ------------------aliases ------------------------
                       {custom datatype }
