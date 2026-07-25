@@ -22,7 +22,7 @@
 
 
                         
-              ---------------------------------------
+              --------------------------------------- 
 LOCATORS :
           
            const loginButton = page.locator('#login');
@@ -226,6 +226,7 @@ DataType/Loops :
                 statment;
                 ++ or --
                 }
+                
           2. do While Loop :      
           Execute atlest once before checking the Codition
           do{
@@ -234,7 +235,6 @@ DataType/Loops :
             } while(condition);
 
           3. for...of Loop
-
           for...of is easier when we want values from an array.
           
           let fruits: string[] = ["Apple", "Banana", "Mango"];
@@ -264,7 +264,8 @@ Function
                displayName();
                
        2.Anonymous Function: 
-             function(){}
+                    --> the variable name act as a function name. 
+               let callFun() = function(){}
 
              let firstFunction-->(to invok the function firstFunction()) = function (x: number, y: number):number-->return type{
               
@@ -272,29 +273,58 @@ Function
                   console.log(name);
               return x + y;
           }
-          console.log(firstFunction(5, 10));
+          console.log(firstFunction(5, 10));                  
 
-       3. arrow function:
-          ()=>     {}
+       3. arrow/Lamda function:
+
+           --> the variable name act as a function name. 
+          let callFun() = ()=>{}
+          
            if the function body cosists of only one statment
            then no need for the curly brackts and the return keywrod.
-          ...Parameters in Functions: 
+           
+          4...Parameters in Functions: 
 
             parameters are values or arg passed to a function        
 
           ... optioanl Parameters in Function;
-                                        ---> this is the optinal variable, if we dont pass any value, it dont have any problem  
-          function green(name:string, cell?:number)
+                                         ---> this is the optinal variable, if we dont pass any value, it dont have any problem  
+           function green(name:string, cell?:number)
+           - if we declaer the one parameter as a optional the following parameter should be optional, otherwise it shows complie error
 
-          ....Default parameters in function
+          ...Default parameters in function
 
           function green(age:number, name:string="vivek")
-
+              
           ....Rest Parameters 
-           
-               function green(age:number, ...name:string[])
+           function green(age:number, ...name:string[])
+
+    5. call Back function: 
+                we can pass the the function as argument inside the another function and gets executed later
+                // call back fun 
+                function message()
+                {
+                    console.log("message");
+                }
+                //2. fun that take other fun as para
+                function paraent(test:()=>void)
+                {
+                console.log("tes");
+                test();
+                }
+                paraent(message);
+                
+                function callback(parameter1: Type1, parameter2: Type2): ReturnType {
+                // callback code
+            }
             
-        ----------------------------------tuples------------
+            function parent(cb: (parameter1: Type1, parameter2: Type2) => ReturnType): void {
+                cb(value1, value2);
+            }
+            
+            parent(callback);
+
+        -------------------- --------------tuples------------
          is simpler like array but in that we can store (hetrogeneous)diff diff type of data
 
          let allData:[string,number]=["d",3,0];
