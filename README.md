@@ -248,7 +248,7 @@ DataType/Loops :
           Banana
           Mango
 
-Function 
+Function\ Array 
 
        Function are the block of program, we can reuse several time 
       
@@ -324,6 +324,10 @@ Function
             
             parent(callback);
 
+      **Array**
+
+      1. 
+  
         -------------------- --------------tuples------------
          is simpler like array but in that we can store (hetrogeneous)diff diff type of data
 
