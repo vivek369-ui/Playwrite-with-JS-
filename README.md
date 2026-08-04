@@ -265,7 +265,7 @@ Function\ Array
                
        2.Anonymous Function: 
                     --> the variable name act as a function name. 
-               let callFun() = function(){}
+               let callFun = function(){}
 
              let firstFunction-->(to invok the function firstFunction()) = function (x: number, y: number):number-->return type{
               
@@ -278,7 +278,7 @@ Function\ Array
        3. arrow/Lamda function:
 
            --> the variable name act as a function name. 
-          let callFun() = ()=>{}
+          let callFun = ()=>{}
           
            if the function body cosists of only one statment
            then no need for the curly brackts and the return keywrod.
