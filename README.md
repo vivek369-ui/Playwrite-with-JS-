@@ -367,31 +367,52 @@ Function\ Array
                        after initilization we can add more value
              
                let secDetalis: {
-                   name: string;
-                   age: number| string;
-                   city: string;
+                   name: string,
+                   age: number| string,
+                   city: string,
                    getSummery:()=>string
-               } = = {
+               } = {
                    name: "Jane Doe",
                    age: 25,
                    city: "New York",
-                   getSummery:function() 
+                   getSummery:function()     
                    {
                     return`${this.name}`;
                    }
                };
                
                3. Using type aliases(ts/js) - 
-               4. using the classes -
+                         {custom datatype } crate once and use multiple time
 
-                                 
-           
-
-              
-                
+          type UserId = number;
                
-               console.log(secDetalis);
-               console.log(secDetalis.age);
+               UserId is another name (alias) for the number type.
+
+              | Keyword         |    Meaning                           |
+               | -------------- | ----------------------------------- |
+               | `type`         | Keyword used to create a type alias |
+               | `AliasName`    | Custom name chosen by the developer |
+               | `=`            | Assigns the original type           |
+               | `ExistingType` | Any valid TypeScript type           |
+
+                                   type data ={
+                              name:string,
+                              age:number,
+                              isactive:boolean,
+                              }
+               
+               let user:data={
+                   name:"john",
+                   age:30,
+                   isactive:true
+               }
+               for(let key in user){
+                   console.log(user[key as keyof data]);
+               }
+
+
+               
+               4. using the classes -
 
                 
     
@@ -416,35 +437,5 @@ Function\ Array
           // updateing tuple element
           allData[0]="dinesh";
           console.log(allData);  
-
-
-     ------------------aliases ------------------------
-                      {custom datatype }
-
-          type UserId = number;
-               
-               UserId is another name (alias) for the number type.
-
-                              | Keyword        | Meaning                             |
-               | -------------- | ----------------------------------- |
-               | `type`         | Keyword used to create a type alias |
-               | `AliasName`    | Custom name chosen by the developer |
-               | `=`            | Assigns the original type           |
-               | `ExistingType` | Any valid TypeScript type           |
-
-                                   type data ={
-                              name:string;
-                              age:number;
-                              isactive:boolean;
-                              }
-               
-               let user:data={
-                   name:"john",
-                   age:30,
-                   isactive:true
-               }
-               for(let key in user){
-                   console.log(user[key as keyof data]);
-               }
 
 
