@@ -326,8 +326,75 @@ Function\ Array
 
       **Array**
 
-      1. 
-  
+
+
+  Class\Object
+
+              . An object is a collection of related data stored as key-value pairs.      
+              .object contains variable & methods
+              . Object contains properties and behaviour.
+              . is collection of key & value pairs.
+          Ex. 
+                 ------> Object    --->properties/variable
+                 Employ-->      Name, Designation, salary 
+                                bonus(), getdetails(), setdetails()
+                                 -------------->method/behaviour
+               diff way to crate the object:
+
+               1. using 'object' type - directly define the value for variable.
+               
+                                     -----> if i add object here, then we only store key value pair and if not add, then it allow the method inside the {}
+                      let secDetalis= {
+                       name: "Jane Doe",
+                       age: 25,
+                       city: "New York",
+                       ----------------------------> crate function inside the object is called method. and it crate in Key value pair
+                       getDetails:function:string()
+                       { 
+                       return`${this.name}, ${this.city}};  
+                       }
+                       // modify the value 
+                        secDetails.ity="jalna";
+                        //access the object
+                       console.log(secDetails.name);
+                       console.log(prima.getDetails());
+                       console.log(prima["age"]);
+
+                 
+               2. Inline type Object - we also define the datatype for variable (TS).
+
+                      Objects and arrays are stored by reference.
+                       after initilization we can add more value
+             
+               let secDetalis: {
+                   name: string;
+                   age: number| string;
+                   city: string;
+                   getSummery:()=>string
+               } = = {
+                   name: "Jane Doe",
+                   age: 25,
+                   city: "New York",
+                   getSummery:function() 
+                   {
+                    return`${this.name}`;
+                   }
+               };
+               
+               3. Using type aliases(ts/js) - 
+               4. using the classes -
+
+                                 
+           
+
+              
+                
+               
+               console.log(secDetalis);
+               console.log(secDetalis.age);
+
+                
+    
         -------------------- --------------tuples------------
          is simpler like array but in that we can store (hetrogeneous)diff diff type of data
 
@@ -381,32 +448,3 @@ Function\ Array
                }
 
 
-
-    --------------Classs and Object-----------
-
-
-                            
-          1 . objcet :  Objects and arrays are stored by reference.
-                       after initilization we can add more value
-            
-               let secDetalis: {
-                   name: string;
-                   age: number| string;
-                   city: string;
-               } = {
-                   name: "Jane Doe",
-                   age: 25,
-                   city: "New York"
-               };
-               
-               console.log(secDetalis);
-               console.log(secDetalis.age);
-
-                    let secDetalis= {
-                   name: "Jane Doe",
-                   age: 25,
-                   city: "New York"
-               };
-               secDetalis.name="vivek";
-               console.log(secDetalis);
-    
