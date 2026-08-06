@@ -413,11 +413,22 @@ Function\ Array
                
                4. using the classes -
 
-               class contains the : constructor , method, properties
-          
+               constructor use for assign data and method used for display the data
+
+               class contains the : constructor , method, propferties (variable name)
+               
             class Details{
+               --------------> the instance must be initialization or added in the construction
                name:string="vivek";
                num:number=3424;
+               ------------------> Read only property(can only be assign once)
+               readonly sid:number;
+               ----------> its a share between all objects if we modifiy in object it reflect on the all objects. we can directly access using class name
+               static schoolNmae:sring ="sb";
+               -------------> varibale and method not only belong to class also to the obj because of that not access using .this , ass using the class name directly
+               static demo(){
+               
+               }
                 dataq()
               {
           console.log ("data function");
@@ -428,7 +439,35 @@ Function\ Array
            let  data  = new Details();
           data.dataq();
 
-                
+           new Student(...) → Creates the object (constructor runs automatically).
+           access.scoreCardAccess() → Uses that object to run one of its methods manually.
+
+         4.3 method overloading and constructor overloading:
+
+          1 constructor : 
+           A constructor is a special method named constructor.
+            It runs automatically when you create an object with new.
+            It is mainly used to:
+            Initialize properties.
+            Accept values while creating objects.
+            Perform one-time setup or initialization.
+            A class can have only one constructor in TypeScript.
+             - multiple sig of consructor but implimentaion match with the bith constructor
+           class calculator{
+            constructor();
+            constructor(a:number,b:number);
+            constructor(a?:number, b?:number) {  
+        if(a!=undefined && b!=undefined)
+        {
+            console.log("correct")
+        }
+        else{
+            console.log("false");
+        }
+    }
+    }
+    let execute = new calculator(4,2);
+    let execute1 = new calculator();
     
         -------------------- --------------tuples------------
          is simpler like array but in that we can store (hetrogeneous)diff diff type of data
