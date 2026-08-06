@@ -333,7 +333,6 @@ Function\ Array
               . An object is a collection of related data stored as key-value pairs.      
               .object contains variable & methods
               . Object contains properties and behaviour.
-              . is collection of key & value pairs.
           Ex. 
                  ------> Object    --->properties/variable
                  Employ-->      Name, Designation, salary 
