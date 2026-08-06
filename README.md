@@ -414,6 +414,21 @@ Function\ Array
                
                4. using the classes -
 
+               class contains the : constructor , method, properties
+          
+            class Details{
+               name:string="vivek";
+               num:number=3424;
+                dataq()
+              {
+          console.log ("data function");
+          console.log(this.name, this.num)
+          }
+          }
+          
+           let  data  = new Details();
+          data.dataq();
+
                 
     
         -------------------- --------------tuples------------
