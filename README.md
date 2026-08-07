@@ -415,7 +415,7 @@ Function\ Array
 
                constructor use for assign data and method used for display the data
 
-               class contains the : constructor , method, propferties (variable name)
+               class contains the : constructor , method, properties (variable name)
                
             class Details{
                --------------> the instance must be initialization or added in the construction
