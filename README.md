@@ -468,7 +468,28 @@ Function\ Array
     }
     let execute = new calculator(4,2);
     let execute1 = new calculator();
-    
+
+      2. method overloading: 
+        one method can be called with different types or different numbers of arguments.
+        multiple signatures + one implementation.
+        class methodOverload{
+            firstMethos(name:string,id:number):void;
+            firstMethos(name:string,id:number,code:string):void;
+            firstMethos(name:string,id:number,code?:string):string
+            {
+                 if(this.firstMethos!=undefined)
+                 {
+                    console.log("its true");
+                 }
+                 return ""+name+id;
+            } 
+        }
+        let execute = new methodOverload()
+        console.log(execute.firstMethos("3",4))
+
+        3. inheritance :
+         use the property of other class
+        
         -------------------- --------------tuples------------
          is simpler like array but in that we can store (hetrogeneous)diff diff type of data
 
