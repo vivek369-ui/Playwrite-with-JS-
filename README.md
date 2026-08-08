@@ -215,7 +215,7 @@ DataType/Loops :
                ""
                null
                undefined
-               NaN
+               NaN :  return +"nextyear"; JavaScript tried to perform a number operation, but the value couldn't become a valid number.
                     
           
         **Loops**
@@ -487,8 +487,23 @@ Function\ Array
         let execute = new methodOverload()
         console.log(execute.firstMethos("3",4))
 
-        3. inheritance :
-         use the property of other class
+        3. inheritance : 
+                              ----> ()use parent class as a type when we want to access the properties and method belong to only both child and parent class
+         let printFamilyDetails:Employe = new EmployeFamily();
+                            
+        super(): user to invoke immediate parent class constructor.
+        constructor()
+          {
+            super()
+          }
+        super:used to invoke immediate parent class method. not invoke the parent class prorty
+            calculatebonus(){
+           super.callEmploye();
+             return 3;
+         }
+         use the property of other class using "extends"
+         a subclass/child class can provide a specific implementation of a method that is already defined in the superclass.
+         the method must have a same name, return type, and parameter.
         
         -------------------- --------------tuples------------
          is simpler like array but in that we can store (hetrogeneous)diff diff type of data
