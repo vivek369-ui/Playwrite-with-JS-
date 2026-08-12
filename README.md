@@ -504,6 +504,12 @@ Function\ Array
          use the property of other class using "extends"
          a subclass/child class can provide a specific implementation of a method that is already defined in the superclass.
          the method must have a same name, return type, and parameter.
+
+
+         4. interface: 
+                 it's a way to define the structure of object. 
+                 interface contains the properties and methods.
+                 it's like blue print of object.
         
         -------------------- --------------tuples------------
          is simpler like array but in that we can store (hetrogeneous)diff diff type of data
