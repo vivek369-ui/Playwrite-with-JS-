@@ -409,7 +409,12 @@ Function\ Array
                    console.log(user[key as keyof data]);
                }
 
-
+                
+             * type ID = number;
+             let employeeId: ID = 101;
+            * type ID = number | string;
+             let id1: ID = 101;
+            let id2: ID = "EMP101";
                
                4. using the classes -
 
@@ -510,7 +515,120 @@ Function\ Array
                  it's a way to define the structure of object. 
                  interface contains the properties and methods.
                  it's like blue print of object.
-        
+                 interface having the abstract method no implimentation only declration.
+                    interface data{
+                    Properties,
+                    abstract methods 
+                    }
+
+                    1 regular,optioanl, Readonly properties.
+                    2 function types 
+                    3. Extending interface 
+                    4. class implement interface.f
+
+                     interface persone
+                           {
+                              name:string;
+                              age:number;
+                              id?:number;  //optional property
+                              readonly blodgroup?:string //read only to prevent modification
+                              display():void; //absract method
+                              displayalldata?():void; //absract optional method
+                           }
+                          
+                           let employe:persone={
+                              name:"vivek",
+                              age:34,
+                             display() {
+                                 console.log("abstract method");
+                             }
+                           }
+                           let employe1:persone={
+                              name:"sham",
+                              age:43,
+                              id:234,
+                            display() {
+                                 console.log("abstract method 2");
+                             }
+                           }
+                          console.log(employe.age,employe.name);
+                          console.log(employe1.name,employe1.id);
+                          employe.display();
+
+
+                  inerface to interfcace :
+
+                         interface god { 
+                            name:string;
+                            age?:number;
+                        }
+                        
+                        
+                        interface evil extends god 
+                        {
+                            evilName:string;
+                        }
+                        
+                        let humen:evil={
+                            name:"ram",
+                            evilName:"ravan"
+                        }
+                        
+                        console.log(humen.name,humen.evilName);
+
+                        interface to class (implements): 
+                            interface animal { 
+                            name:string;
+                            sound():void;
+                            }
+                            class dog implements animal{
+                            name:string;
+                            constructor(name:string)
+                            {
+                            this.name=name;
+                            }
+                            sound()
+                            {
+                            console.log("break")
+                            }
+                        }
+
+                         interface support multiple inheritance: 
+
+                                                 interface Employee {
+                                                  name: string;
+                                              }
+                                              
+                                              interface Manager {
+                                                  teamSize: number;
+                                              }
+                                              
+                                              class Person implements Employee, Manager {
+                                                  name = "Vivek";
+                                                  teamSize = 10;
+                                              }
+                                              let acess = new Person();
+                                              console.log(acess.name);
+
+
+                        IMP :  For more advanced cases, TypeScript supports mixins, where you combine behavior from multiple classes.
+
+                        Class → can extend only ONE class.
+                        Class → can implement MULTIPLE interfaces.
+                         class Student extends Person implements Employee, Manager {
+                                              // ...
+                                          }
+
+  Modules: 
+         
+              it contains the reusable method, classes, functions.
+              it is used for crate the Utility files.
+             module :  export class Employe
+                     ---->class name or  the name of what we want to import   
+            import { Employe } from "./classObjThree";
+                                      ------> file name
+
+    
         -------------------- --------------tuples------------
          is simpler like array but in that we can store (hetrogeneous)diff diff type of data
 
