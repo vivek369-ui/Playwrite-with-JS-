@@ -21,8 +21,15 @@
                         tracing(trace viewer) : captures screenshorts, records videos, retries flaky tests, and log steps automatically (capture alll the info to investigate the test failure)
 
 
+
                         
-              --------------------------------------- PR----------------------------------------------
+----------------------------------------------------PR--------------------------------------------------------------------
+
+
+
+
+
+              
 LOCATORS :
           
            const loginButton = page.locator('#login');
