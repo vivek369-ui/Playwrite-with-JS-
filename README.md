@@ -25,9 +25,26 @@
                         
 ----------------------------------------------------PR--------------------------------------------------------------------
 
+ 
+         install node.js->required for run JS base program
 
+        PS C:\TS_Test\PR_Day> npm init playwright@latest
+        > npx
+        > create-playwright
+        Getting started with writing end-to-end tests with Playwright:
+        Initializing project in '.'
+        √ Do you want to use TypeScript or JavaScript? · TypeScript
+        √ Where to put your end-to-end tests? · tests
+        √ Add a GitHub Actions workflow? (Y/n) · true
+        √ Install Playwright browsers (can be done manually via 'npx playwright install')? (Y/n) · true
+        Initializing NPM project (npm init -y)…
+        Wrote to C:\TS_Test\PR_Day\package.json:
 
-
+            save the PW file => spec.ts
+            all playwright related package in the =>node modules->@playwrite\test
+            for configration the so many thinks like browser, paralle execution (contain playwright config setting)=> playwright.config.ts
+            to add all the dependances =>package.json(it's like a pom .xml in java to add the dependances)
+             
 
               
 LOCATORS :
