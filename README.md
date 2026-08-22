@@ -44,8 +44,29 @@
             all playwright related package in the =>node modules->@playwrite\test
             for configration the so many thinks like browser, paralle execution (contain playwright config setting)=> playwright.config.ts
             to add all the dependances =>package.json(it's like a pom .xml in java to add the dependances)
-             
+            
+            1. test/expect
+            Playwright Test provides a `test` function to declare tests and `expect` function to write assertions. need to import
+            1.1 test :  is a Playwright function that takes a test title and a callback function containing your test steps.
+              import{test,expect} from "@playwright/test";
+              Ex...>
+                 - `test(title, body)`
+                  --> test('basic test', async ({ page }) 
+              * - `test(title, details, body)`
+                 --> test('basic test', {tag: '@smoke'}, async ({ page }) 
 
+                  * import { test, expect } from '@playwright/test'
+                 * test('basic test', async ({ page }) => {
+                 *   await page.goto('https://playwright.dev/');
+                 * });
+                 
+           1.2 Fixture ({ page }):  Playwright prepares something for me.
+             page fixture = Playwright prepares a browser page/tab for my test.
+             page.goto() = I tell that page which website to open.
+             ({page})// ---->(fixture it's a global variable, because of that into the {})
+
+           
+           
               
 LOCATORS :
           
