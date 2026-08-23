@@ -23,27 +23,40 @@
 
 
                         
-----------------------------------------------------PR--------------------------------------------------------------------
+----------------------------------------------------PW--------------------------------------------------------------------
 
+ Playwright : 
  
-         install node.js->required for run JS base program
-
-        PS C:\TS_Test\PR_Day> npm init playwright@latest
-        > npx
-        > create-playwright
-        Getting started with writing end-to-end tests with Playwright:
-        Initializing project in '.'
-        √ Do you want to use TypeScript or JavaScript? · TypeScript
-        √ Where to put your end-to-end tests? · tests
-        √ Add a GitHub Actions workflow? (Y/n) · true
-        √ Install Playwright browsers (can be done manually via 'npx playwright install')? (Y/n) · true
-        Initializing NPM project (npm init -y)…
-        Wrote to C:\TS_Test\PR_Day\package.json:
-
-            save the PW file => spec.ts
-            all playwright related package in the =>node modules->@playwrite\test
-            for configration the so many thinks like browser, paralle execution (contain playwright config setting)=> playwright.config.ts
-            to add all the dependances =>package.json(it's like a pom .xml in java to add the dependances)
+             architecture : 
+              Lang ---> playwright APi(goto, locator, except)<--->WebSocket<--->Browser server---> Browser----> Application Under Test
+              
+              1.Lang-->to write the test (Ts,js,Python)
+              2.playwright API-->  Provide High level APIs to control Browser
+             3. WebSocket--> (duplex)communication protocol   through which layers can communicate. between client and browser server.
+             4. Browser server & context:  server control the browser instance(run and manages the browser when parallel execution). context (isolate)store (cookies,session,cache)
+             Real Browsers vs Rendering Engines
+              • Chromium, firefox and webkit are rendering browser engines (Not real browsers).
+              Real browsers are developed using rendering engines:
+              For example:
+              • Chromium engine is used in Google Chrome, Microsoft Edge, Brave and Opera.
+              • Webkit engine is used in Safari.
+              • Gecko engine is used in Firefox
+              Real browsers developed on top of rendering browser engines by adding their own features, UI and
+              privacy tools.
+            
+            Playwright environment setup :
+            Pre-requisites
+          1. Install Node.js latest 22.x, 24.x or 26.x
+          2. Install VS Code
+          3. Create and open a project folder in VSCode
+          Install Playwright:
+          npm init playwright@latest
+          Creates folder structure along with(default one):
+           • to write the test => tests/ folder
+           * save the PW file => spec.ts
+           * all playwright related package in the =>node modules->@playwrite\test
+           * for configration the so many thinks like browser, paralle execution (contain playwright config setting)=> playwright.config.ts
+           * to add all the dependances =>package.json(it's like a pom .xml in java to add the dependances)
             
             1. test/expect
             Playwright Test provides a `test` function to declare tests and `expect` function to write assertions. need to import
@@ -59,8 +72,12 @@
                  * test('basic test', async ({ page }) => {
                  *   await page.goto('https://playwright.dev/');
                  * });
-                 
-           1.2 Fixture ({ page }):  Playwright prepares something for me.
+
+                 Terminal :
+                   * run playwright test : C:\TS_Test\PR_Day> npx playwright test ./tests/first.spec.ts
+                   * headed mode:   npx playwright test  ./tests/example.spec.ts --headed
+
+            1.2 Fixture ({ page }):  Playwright prepares something for me.
              page fixture = Playwright prepares a browser page/tab for my test.
              page.goto() = I tell that page which website to open.
              ({page})// ---->(fixture it's a global variable, because of that into the {})
