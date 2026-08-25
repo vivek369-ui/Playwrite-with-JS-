@@ -72,17 +72,18 @@
                  * test('basic test', async ({ page }) => {
                  *   await page.goto('https://playwright.dev/');
                  * });
-
-                 Terminal :
-                   * run playwright test : C:\TS_Test\PR_Day> npx playwright test ./tests/first.spec.ts
-                   * headed mode:   npx playwright test  ./tests/example.spec.ts --headed
-
+                  await doesn't mean “wait some fixed number of seconds.” It means wait for the Promise returned by goto() to settle according to Playwright's navigation behavior.
             1.2 Fixture ({ page }):  Playwright prepares something for me.
              page fixture = Playwright prepares a browser page/tab for my test.
              page.goto() = I tell that page which website to open.
              ({page})// ---->(fixture it's a global variable, because of that into the {})
+             
+-----------------------Terminal-Command----------------------------------------------------------
 
-           
+           * run playwright test => C:\TS_Test\PR_Day> npx playwright test ./tests/first.spec.ts
+           * headed mode =>   C:\TS_Test\PR_Day>        npx playwright test  ./tests/example.spec.ts --headed
+           * 
+
            
               
 LOCATORS :
@@ -129,7 +130,7 @@ LOCATORS :
           await page.getByAltText("Australian Aboriginal flag");// alt attribut value 
           await page.getByPlaceholder("linktr.ee/yourname").focus//use placeholder value
           await page.getByRole('button', { name: 'Open language dropdown' });;// get implicit & explicit. get the web element base on that role like button,checkbox 
-          use tag and attribute=value for locat the element
+          use tag and attribute=value for locate the element
           await page.getByText("Log in").click;// using inner text 
           await page.getByLabel("");// using the lable tag innner value.
           await page.getByTitle("");//Allows locating elements by their title attribute.
