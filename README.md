@@ -83,7 +83,7 @@
            * run playwright test => C:\TS_Test\PR_Day> npx playwright test ./tests/first.spec.ts
            * headed mode =>   C:\TS_Test\PR_Day>        npx playwright test  ./tests/example.spec.ts --headed
            * 
-
+----------------------------------------------------------------------------------------------------------
            
               
 LOCATORS :
@@ -127,14 +127,15 @@ LOCATORS :
                 page.getByPlaceholder("Enter your email");
 
         Built_In_Locators : 
-          await page.getByAltText("Australian Aboriginal flag");// alt attribut value 
-          await page.getByPlaceholder("linktr.ee/yourname").focus//use placeholder value
+          await page.getByAltText("Australian Aboriginal flag");// alt attribut value (mostly used for the IMG)
+          await page.getByPlaceholder("linktr.ee/yourname").focus//use placeholder attribute value(for the input filed)
           await page.getByRole('button', { name: 'Open language dropdown' });;// get implicit & explicit. get the web element base on that role like button,checkbox 
+          //If there is NO role attribute, look at the HTML element. Many HTML elements have an implicit/default
           use tag and attribute=value for locate the element
-          await page.getByText("Log in").click;// using inner text 
-          await page.getByLabel("");// using the lable tag innner value.
+          await page.getByText("Log in").click;// using inner text (used for the non interactive element)
+          await page.getByLabel("");// using the lable tag inner value.
           await page.getByTitle("");//Allows locating elements by their title attribute.
-          awiat page.getByTestId("")//You can locate the element by it's test id attribute.
+          await page.getByTestId("")//You can locate the element by it's test id attribute.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
