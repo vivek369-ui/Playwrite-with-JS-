@@ -83,7 +83,6 @@
            * run playwright test => C:\TS_Test\PR_Day> npx playwright test ./tests/first.spec.ts
            * headed mode =>   C:\TS_Test\PR_Day>        npx playwright test  ./tests/example.spec.ts --headed
            * 
-----------------------------------------------------------------------------------------------------------
            
               
 LOCATORS :
@@ -136,13 +135,39 @@ LOCATORS :
           await page.getByLabel("");// using the lable tag inner value.
           await page.getByTitle("");//Allows locating elements by their title attribute.
           await page.getByTestId("")//You can locate the element by it's test id attribute.
----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-InputBox & RadioButton:
+          
+InputBox(Assertions) & RadioButton & DropDown:
 
+    inputBox validation  :          
+                    await expect(locator).toBeDisabled()	Element is disabled
+                    await expect(locator).toBeEditable()	Element is editable
+                    await expect(locator).toBeEmpty()	Container is empty
+                    await expect(locator).toBeEnabled()	Element is enabled
+                    await expect(locator).toBeHidden()	Element is not visible
+                    await expect(locator).toBeVisible()	Element is visible
+                    await expect(locator).toContainText()	Element contains text
+                    await expect(locator).toHaveValue()	Input has a value
+                    await expect(locator).toHaveValues()	Select has options selected
+                    toHaveAttribute("maxlength", "10");
+                                     type         text
+                                     
+    Radio   :
+              await female.check();
+              await expect(female).toBeChecked();
+              await expect(male).not.toBeChecked();
+              
+     DropDown : 
 
+                  /**drop down (value , visible / label text, index)*/
+                  await page.locator("//*[@id='dropdown']").selectOption({ label: "Option 1" });
+                  await page.locator("#country").selectOption({ label: "Afghanistan" });
+                  await page.locator(".form-control").selectOption({ value: "50" });
+                  await page.locator(".form-control").selectOption({ index: 3 });
+                  await expect(page.locator(.form-control option)).toHaveCount(4);
+                  const numberOfOption = await page.locator(".form-control option");
+                  await expect(numberOfOption).toHaveCount(4);
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Assertions : 
             
@@ -160,18 +185,6 @@ Assertions :
        'Orange'
      ]);
      
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-DropDown : 
-
-            /**drop down (value , visible / label text, index)*/
-            await page.locator("//*[@id='dropdown']").selectOption({ label: "Option 1" });
-            await page.locator("#country").selectOption({ label: "Afghanistan" });
-            await page.locator(".form-control").selectOption({ value: "50" });
-            await page.locator(".form-control").selectOption({ index: 3 });
-            await expect(page.locator(.form-control option)).toHaveCount(4);
-            const numberOfOption = await page.locator(".form-control option");
-            await expect(numberOfOption).toHaveCount(4);
 
 -----------------------------------------------------------------TS--------------------------------------------------------------------
 
