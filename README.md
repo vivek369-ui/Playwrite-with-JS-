@@ -136,6 +136,11 @@ LOCATORS :
           await page.getByLabel("");// using the lable tag inner value.
           await page.getByTitle("");//Allows locating elements by their title attribute.
           await page.getByTestId("")//You can locate the element by it's test id attribute.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+InputBox & RadioButton:
+
+
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
