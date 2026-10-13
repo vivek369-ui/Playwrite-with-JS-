@@ -137,7 +137,7 @@ LOCATORS :
           await page.getByTestId("")//You can locate the element by it's test id attribute.
 
           
-InputBox(Assertions) & RadioButton & DropDown:
+InputBox(Assertions) & RadioButton & DropDown & check Box:
 
     inputBox validation  :          
                     await expect(locator).toBeDisabled()	Element is disabled
@@ -154,8 +154,9 @@ InputBox(Assertions) & RadioButton & DropDown:
                                      
     Radio   :
               await female.check();
+              await  page.getByLabel(checkbox).uncheck();
               await expect(female).toBeChecked();
-              await expect(male).not.toBeChecked();
+              await expect(male).not.toBeChecked();                 
               
      DropDown : 
 
