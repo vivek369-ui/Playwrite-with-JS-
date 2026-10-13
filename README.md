@@ -82,7 +82,7 @@
 
            * run playwright test => C:\TS_Test\PR_Day> npx playwright test ./tests/first.spec.ts
            * headed mode =>   C:\TS_Test\PR_Day>        npx playwright test  ./tests/example.spec.ts --headed
-           * 
+           *
            
               
 LOCATORS :
@@ -137,26 +137,23 @@ LOCATORS :
           await page.getByTestId("")//You can locate the element by it's test id attribute.
 
           
-InputBox(Assertions) & RadioButton & DropDown & check Box:
+InputBox & RadioButton & DropDown & check Box & assertion :
 
-    inputBox validation  :          
-                    await expect(locator).toBeDisabled()	Element is disabled
-                    await expect(locator).toBeEditable()	Element is editable
-                    await expect(locator).toBeEmpty()	Container is empty
-                    await expect(locator).toBeEnabled()	Element is enabled
-                    await expect(locator).toBeHidden()	Element is not visible
-                    await expect(locator).toBeVisible()	Element is visible
-                    await expect(locator).toContainText()	Element contains text
-                    await expect(locator).toHaveValue()	Input has a value
-                    await expect(locator).toHaveValues()	Select has options selected
-                    toHaveAttribute("maxlength", "10");
-                                     type         text
+    Locator Methods → Find, interact with, or inspect elements.
+     Assertion Methods: Used to validate whether the application is behaving as expected. These are used with expect().
+     
+    inputBox   :          
+           
                                      
-    Radio   :
-              await female.check();
-              await  page.getByLabel(checkbox).uncheck();
-              await expect(female).toBeChecked();
-              await expect(male).not.toBeChecked();                 
+    Radio Button and Checkbox Methods:
+    
+            Locator Method	Description
+            check()	Selects a radio button or checkbox
+            uncheck()	Unchecks a checkbox (not radio buttons)
+            setChecked(true)	Ensures checkbox/radio is checked
+            setChecked(false)	Ensures checkbox is unchecked
+            isChecked()	Returns true if checked, otherwise false
+            click()	Clicks a radio button or checkbox
               
      DropDown : 
 
@@ -168,7 +165,99 @@ InputBox(Assertions) & RadioButton & DropDown & check Box:
                   await expect(page.locator(.form-control option)).toHaveCount(4);
                   const numberOfOption = await page.locator(".form-control option");
                   await expect(numberOfOption).toHaveCount(4);
+                  Locator Method	Description
+                selectOption("IN")	Selects a native dropdown option by value
+                selectOption({ label: "India" })	Selects an option by visible text
+                selectOption({ index: 1 })	Selects an option by index
 
+
+    D. Element Interaction Methods
+          Locator Method	Description
+          click()	Single-clicks an element
+          dblclick()	Double-clicks an element
+          hover()	Moves the mouse over an element
+          dragTo(target)	Drags an element to another element
+          scrollIntoViewIfNeeded()	Scrolls to the element when needed
+          screenshot()	Captures a screenshot of an element
+          waitFor({ state: "visible" })	Waits until the element is visible
+
+
+    E. Element State and Information Methods
+
+        Locator Method	Description
+        isVisible()	Returns whether the element is visible
+        isHidden()	Returns whether the element is hidden
+        isEnabled()	Returns whether the element is enabled
+        isDisabled()	Returns whether the element is disabled
+        isEditable()	Returns whether the element is editable
+        isChecked()	Returns whether checkbox/radio is selected
+        innerText()	Returns rendered text
+        textContent()	Returns text content, including hidden text
+        getAttribute("id")	Returns an attribute value
+        count()	Returns number of matching elements
+
+
+    F. Locator Filtering and Indexing Methods: 
+    
+        Locator Method	Description
+        first()	Selects first matching element
+        last()	Selects last matching element
+        nth(0)	Selects first element
+        nth(1)	Selects second element
+        filter({ hasText: "Vivek" })	Filters elements by text
+        locator("input")	Finds matching descendant elements
+        getByRole("button")	Finds descendant elements by accessibility role
+
+       2. Playwright Assertion Methods
+       
+      These methods are used with expect() to validate expected results.
+      
+      A. Input Box Assertions
+      Assertion Method	Description
+      toBeVisible()	Verifies input is visible
+      toBeHidden()	Verifies input is hidden or absent
+      toBeEnabled()	Verifies input is enabled
+      toBeDisabled()	Verifies input is disabled
+      toBeEditable()	Verifies input can be edited
+      toBeEmpty()	Verifies input has no value
+      toHaveValue("Vivek")	Verifies input value
+      toHaveAttribute("maxlength", "10")	Verifies maximum length attribute
+      toHaveAttribute("type", "text")	Verifies input type
+      toBeFocused()	Verifies input has keyboard focus
+      toHaveJSProperty("readOnly", true)	Verifies read-only property
+      B. Radio Button and Checkbox Assertions
+      Assertion Method	Description
+      toBeChecked()	Verifies radio/checkbox is checked
+      not.toBeChecked()	Verifies radio/checkbox is unchecked
+      toBeEnabled()	Verifies radio/checkbox is enabled
+      toBeDisabled()	Verifies radio/checkbox is disabled
+      toBeVisible()	Verifies radio/checkbox is visible
+      toHaveAttribute("value", "Male")	Verifies the HTML value
+      toBeChecked({ indeterminate: true })	Verifies checkbox is indeterminate
+      C. Dropdown Assertions
+      Assertion Method	Description
+      toHaveValue("IN")	Verifies selected option value
+      toHaveValues(["A", "B"])	Verifies selected values in a multiple-select
+      toBeEnabled()	Verifies dropdown is enabled
+      toBeDisabled()	Verifies dropdown is disabled
+      toHaveCount(5)	Verifies number of matched options when used on an options locator
+      D. Text and Element Assertions
+      Assertion Method	Description
+      toHaveText("Welcome")	Verifies element text
+      toContainText("Welcome")	Verifies element contains text
+      toHaveCount(3)	Verifies number of matching elements
+      toHaveAttribute("href", "/home")	Verifies an HTML attribute
+      toHaveClass("active")	Verifies element's class
+      toContainClass("active")	Verifies element includes the specified class
+      toHaveCSS("color", "red")	Verifies CSS property value
+      toBeInViewport()	Verifies element is inside the viewport
+      toHaveId("submitBtn")	Verifies element ID
+      E. Page-Level Assertions
+      These are used with expect(page) rather than expect(locator).
+      Assertion Method	Description
+      toHaveURL("https://example.com")	Verifies current page URL
+      toHaveTitle("Home")	Verifies browser page title
+        
 
 Assertions : 
             
