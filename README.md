@@ -141,194 +141,149 @@ InputBox & RadioButton & DropDown & check Box & assertion :
 
      Locator Methods → Find, interact with, or inspect elements.
      Assertion Methods: Used to validate whether the application is behaving as expected. These are used with expect().
-     
-    inputBox   :      Method	Detailed description	Example
-    
-    ## 1. Locator Methods
-    
-    ### A. Input Box Methods
-    
-    | Method | Detailed description | Example |
-    |---|---|---|
-    | `fill()` | Replaces existing text with the supplied value in an editable input or textarea. | `await name.fill("Vivek");` |
-    | `clear()` | Removes all text from an editable input. | `await name.clear();` |
-    | `press()` | Sends a keyboard key or combination to the element, such as Enter, Tab, or Control+A. | `await name.press("Tab");` |
-    | `pressSequentially()` | Types characters one at a time, useful for inputs that react to individual keystrokes. | `await name.pressSequentially("Vivek");` |
-    | `click()` | Clicks the element; useful for focusing a field or opening a control. | `await name.click();` |
-    | `focus()` | Gives the element keyboard focus without clicking it. | `await name.focus();` |
-    | `blur()` | Removes keyboard focus, often triggering on-blur form validation. | `await name.blur();` |
-    | `inputValue()` | Reads the current value from an input, textarea, or select element. | `const value = await name.inputValue();` |
-    | `getAttribute()` | Reads an HTML attribute; returns `null` if the attribute does not exist. | `const max = await name.getAttribute("maxlength");` |
-    
-    ### B. Radio Button and Checkbox Methods
-    
-    | Method | Detailed description | Example |
-    |---|---|---|
-    | `check()` | Ensures a checkbox or radio button is checked; does not toggle it off if already checked. | `await male.check();` |
-    | `uncheck()` | Ensures a checkbox is unchecked; **not supported for radio buttons**. | `await sports.uncheck();` |
-    | `setChecked(true)` | Ensures a checkbox or radio button is selected. | `await sports.setChecked(true);` |
-    | `setChecked(false)` | Ensures a checkbox is unchecked; cannot uncheck a radio button this way. | `await sports.setChecked(false);` |
-    | `isChecked()` | Immediately reads whether the checkbox or radio button is checked and returns a boolean. | `const selected = await male.isChecked();` |
-    | `click()` | Clicks the control; for a checkbox, this can toggle the checked state. | `await sports.click();` |
-    
-    ### C. Native Dropdown Methods
-    
-    These methods work on native HTML `<select>` elements. Custom dropdowns such as React Select usually require clicking and selecting an option instead.
-    
-    | Method | Detailed description | Example |
-    |---|---|---|
-    | `selectOption("IN")` | Selects the option whose HTML `value` is `IN`. | `await country.selectOption("IN");` |
-    | `selectOption({ label: "India" })` | Selects the option by its visible label. | `await country.selectOption({ label: "India" });` |
-    | `selectOption({ index: 1 })` | Selects the option at zero-based index 1 (second option). | `await country.selectOption({ index: 1 });` |
-    | `selectOption(["A", "B"])` | Selects multiple values in a `<select multiple>` element. | `await subjects.selectOption(["A", "B"]);` |
-    
-    ### D. Element Interaction Methods
-    
-    | Method | Detailed description | Example |
-    |---|---|---|
-    | `click()` | Clicks an element after checking that it is actionable (for example, visible and enabled). | `await submit.click();` |
-    | `dblclick()` | Performs a double-click. | `await item.dblclick();` |
-    | `hover()` | Moves the mouse pointer over the element, useful for hover menus and tooltips. | `await menu.hover();` |
-    | `dragTo()` | Drags one element onto another locator. | `await source.dragTo(target);` |
-    | `scrollIntoViewIfNeeded()` | Scrolls the element into view when necessary. | `await submit.scrollIntoViewIfNeeded();` |
-    | `screenshot()` | Saves a screenshot of the matched element. | `await submit.screenshot({ path: "submit.png" });` |
-    | `waitFor()` | Waits for a locator state such as `visible`, `hidden`, `attached`, or `detached`. | `await submit.waitFor({ state: "visible" });` |
-    
-    ### E. Element State and Information Methods
-    
-    | Method | Detailed description | Example |
-    |---|---|---|
-    | `isVisible()` | Checks whether the element is visible **at the time of the call**; returns a boolean. | `const visible = await submit.isVisible();` |
-    | `isHidden()` | Checks whether the element is hidden or absent; returns a boolean. | `const hidden = await submit.isHidden();` |
-    | `isEnabled()` | Checks whether the element is enabled; returns a boolean. | `const enabled = await submit.isEnabled();` |
-    | `isDisabled()` | Checks whether the element is disabled; returns a boolean. | `const disabled = await submit.isDisabled();` |
-    | `isEditable()` | Checks whether the element is editable; returns a boolean. | `const editable = await name.isEditable();` |
-    | `innerText()` | Reads rendered text from the element. | `const text = await heading.innerText();` |
-    | `textContent()` | Reads DOM text content, which can include text from hidden descendants. | `const text = await heading.textContent();` |
-    | `count()` | Counts the elements currently matching the locator. | `const total = await items.count();` |
-    
-    ### F. Locator Filtering and Indexing Methods
-    
-    | Method | Detailed description | Example |
-    |---|---|---|
-    | `first()` | Narrows a locator to the first matching element. | `items.first()` |
-    | `last()` | Narrows a locator to the last matching element. | `items.last()` |
-    | `nth(0)` | Narrows a locator to the first matching element; indexing starts at zero. | `items.nth(0)` |
-    | `nth(1)` | Narrows a locator to the second matching element. | `items.nth(1)` |
-    | `filter({ hasText: "Vivek" })` | Keeps only matching elements containing the specified text. | `rows.filter({ hasText: "Vivek" })` |
-    | `locator("input")` | Finds matching descendant inputs inside the current locator. | `form.locator("input")` |
-    | `getByRole("button")` | Finds matching descendants based on their accessible role. | `form.getByRole("button")` |
-    
-    > **Tip:** Prefer unique, meaningful locators over `nth()` where possible. A page layout change can alter element order.
-    
-    ## 2. Assertion Methods
-    
-    Use locator assertions as `await expect(locator).matcher(...)`. Unlike state-checking methods such as `isVisible()`, Playwright's locator assertions automatically retry.
-    
-    ### A. Input Box Assertions
-    
-    | Assertion | Detailed description | Example |
-    |---|---|---|
-    | `toBeVisible()` | Verifies the input is visible on the page. | `await expect(name).toBeVisible();` |
-    | `toBeHidden()` | Verifies the element is hidden or absent. | `await expect(name).toBeHidden();` |
-    | `toBeEnabled()` | Verifies the field is enabled. | `await expect(name).toBeEnabled();` |
-    | `toBeDisabled()` | Verifies the field is disabled. | `await expect(name).toBeDisabled();` |
-    | `toBeEditable()` | Verifies the field can be edited (not read-only or disabled). | `await expect(name).toBeEditable();` |
-    | `toBeEmpty()` | Verifies an input has no value, or an applicable element has no text. | `await expect(name).toBeEmpty();` |
-    | `toHaveValue()` | Verifies the current value of an input, textarea, or select. | `await expect(name).toHaveValue("Vivek");` |
-    | `toHaveAttribute()` | Verifies an HTML attribute has the expected value. | `await expect(name).toHaveAttribute("maxlength", "10");` |
-    | `toBeFocused()` | Verifies the element has keyboard focus. | `await expect(name).toBeFocused();` |
-    | `toHaveJSProperty()` | Verifies a JavaScript property on the element. | `await expect(name).toHaveJSProperty("readOnly", true);` |
-    
-    ### B. Radio Button and Checkbox Assertions
-    
-    | Assertion | Detailed description | Example |
-    |---|---|---|
-    | `toBeChecked()` | Verifies the radio button or checkbox is selected. | `await expect(male).toBeChecked();` |
-    | `not.toBeChecked()` | Verifies the control is not selected. | `await expect(female).not.toBeChecked();` |
-    | `toBeEnabled()` | Verifies the control is enabled. | `await expect(male).toBeEnabled();` |
-    | `toBeDisabled()` | Verifies the control is disabled. | `await expect(male).toBeDisabled();` |
-    | `toBeVisible()` | Verifies the control is visible. | `await expect(male).toBeVisible();` |
-    | `toHaveAttribute()` | Verifies an attribute such as `value` or `type`. | `await expect(male).toHaveAttribute("value", "Male");` |
-    | `toBeChecked({ indeterminate: true })` | Verifies a checkbox is in the indeterminate (neither fully checked nor unchecked) state. | `await expect(box).toBeChecked({ indeterminate: true });` |
-    
-    ### C. Native Dropdown Assertions
-    
-    | Assertion | Detailed description | Example |
-    |---|---|---|
-    | `toHaveValue("IN")` | Verifies the selected option's HTML value. | `await expect(country).toHaveValue("IN");` |
-    | `toHaveValues(["A", "B"])` | Verifies the selected values of a multiple-select element. | `await expect(subjects).toHaveValues(["A", "B"]);` |
-    | `toBeEnabled()` | Verifies the dropdown is enabled. | `await expect(country).toBeEnabled();` |
-    | `toBeDisabled()` | Verifies the dropdown is disabled. | `await expect(country).toBeDisabled();` |
-    | `toHaveCount(5)` | Verifies the locator matches five elements; apply to an **options locator**, not the dropdown itself. | `await expect(country.locator("option")).toHaveCount(5);` |
-    
-    ### D. Text and Element Assertions
-    
-    | Assertion | Detailed description | Example |
-    |---|---|---|
-    | `toHaveText()` | Verifies the element's text matches the expected text. | `await expect(heading).toHaveText("Welcome");` |
-    | `toContainText()` | Verifies the element contains the specified text. | `await expect(message).toContainText("Success");` |
-    | `toHaveCount()` | Verifies the number of elements matching a locator. | `await expect(items).toHaveCount(3);` |
-    | `toHaveClass()` | Verifies the class attribute matches the expected string or pattern. | `await expect(button).toHaveClass(/active/);` |
-    | `toContainClass()` | Verifies that the class list contains the specified class or classes. | `await expect(button).toContainClass("active");` |
-    | `toHaveCSS()` | Verifies the computed CSS property value. | `await expect(button).toHaveCSS("display", "block");` |
-    | `toBeInViewport()` | Verifies the element is within the viewport. | `await expect(button).toBeInViewport();` |
-    | `toHaveId()` | Verifies the element's ID. | `await expect(button).toHaveId("submit");` |
-           
-                                     
-              
-     DropDown : 
+  ## 1. Locator Methods
 
-                  /**drop down (value , visible / label text, index)*/
-                  await page.locator("//*[@id='dropdown']").selectOption({ label: "Option 1" });
-                  await page.locator("#country").selectOption({ label: "Afghanistan" });
-                  await page.locator(".form-control").selectOption({ value: "50" });
-                  await page.locator(".form-control").selectOption({ index: 3 });
-                  await expect(page.locator(.form-control option)).toHaveCount(4);
-                  const numberOfOption = await page.locator(".form-control option");
-                  await expect(numberOfOption).toHaveCount(4);
-                  Locator Method	Description
-                selectOption("IN")	Selects a native dropdown option by value
-                selectOption({ label: "India" })	Selects an option by visible text
-                selectOption({ index: 1 })	Selects an option by index
+### A. Input Box Methods
 
+| Method | Detailed description | Example |
+|---|---|---|
+| `fill()` | Replaces existing text with the supplied value in an editable input or textarea. | `await name.fill("Vivek");` |
+| `clear()` | Removes all text from an editable input. | `await name.clear();` |
+| `press()` | Sends a keyboard key or combination to the element, such as Enter, Tab, or Control+A. | `await name.press("Tab");` |
+| `pressSequentially()` | Types characters one at a time, useful for inputs that react to individual keystrokes. | `await name.pressSequentially("Vivek");` |
+| `click()` | Clicks the element; useful for focusing a field or opening a control. | `await name.click();` |
+| `focus()` | Gives the element keyboard focus without clicking it. | `await name.focus();` |
+| `blur()` | Removes keyboard focus, often triggering on-blur form validation. | `await name.blur();` |
+| `inputValue()` | Reads the current value from an input, textarea, or select element. | `const value = await name.inputValue();` |
+| `getAttribute()` | Reads an HTML attribute; returns `null` if the attribute does not exist. | `const max = await name.getAttribute("maxlength");` |
 
-    D. Element Interaction Methods
-          Locator Method	Description
-          click()	Single-clicks an element
-          dblclick()	Double-clicks an element
-          hover()	Moves the mouse over an element
-          dragTo(target)	Drags an element to another element
-          scrollIntoViewIfNeeded()	Scrolls to the element when needed
-          screenshot()	Captures a screenshot of an element
-          waitFor({ state: "visible" })	Waits until the element is visible
+### B. Radio Button and Checkbox Methods
 
+| Method | Detailed description | Example |
+|---|---|---|
+| `check()` | Ensures a checkbox or radio button is checked; does not toggle it off if already checked. | `await male.check();` |
+| `uncheck()` | Ensures a checkbox is unchecked; **not supported for radio buttons**. | `await sports.uncheck();` |
+| `setChecked(true)` | Ensures a checkbox or radio button is selected. | `await sports.setChecked(true);` |
+| `setChecked(false)` | Ensures a checkbox is unchecked; cannot uncheck a radio button this way. | `await sports.setChecked(false);` |
+| `isChecked()` | Immediately reads whether the checkbox or radio button is checked and returns a boolean. | `const selected = await male.isChecked();` |
+| `click()` | Clicks the control; for a checkbox, this can toggle the checked state. | `await sports.click();` |
 
-    E. Element State and Information Methods
+### C. Native Dropdown Methods
 
-        Locator Method	Description
-        isVisible()	Returns whether the element is visible
-        isHidden()	Returns whether the element is hidden
-        isEnabled()	Returns whether the element is enabled
-        isDisabled()	Returns whether the element is disabled
-        isEditable()	Returns whether the element is editable
-        isChecked()	Returns whether checkbox/radio is selected
-        innerText()	Returns rendered text
-        textContent()	Returns text content, including hidden text
-        getAttribute("id")	Returns an attribute value
-        count()	Returns number of matching elements
+These methods work on native HTML `<select>` elements. Custom dropdowns such as React Select usually require clicking and selecting an option instead.
 
+| Method | Detailed description | Example |
+|---|---|---|
+| `selectOption("IN")` | Selects the option whose HTML `value` is `IN`. | `await country.selectOption("IN");` |
+| `selectOption({ label: "India" })` | Selects the option by its visible label. | `await country.selectOption({ label: "India" });` |
+| `selectOption({ index: 1 })` | Selects the option at zero-based index 1 (second option). | `await country.selectOption({ index: 1 });` |
+| `selectOption(["A", "B"])` | Selects multiple values in a `<select multiple>` element. | `await subjects.selectOption(["A", "B"]);` |
 
-    F. Locator Filtering and Indexing Methods: 
+### D. Element Interaction Methods
+
+| Method | Detailed description | Example |
+|---|---|---|
+| `click()` | Clicks an element after checking that it is actionable (for example, visible and enabled). | `await submit.click();` |
+| `dblclick()` | Performs a double-click. | `await item.dblclick();` |
+| `hover()` | Moves the mouse pointer over the element, useful for hover menus and tooltips. | `await menu.hover();` |
+| `dragTo()` | Drags one element onto another locator. | `await source.dragTo(target);` |
+| `scrollIntoViewIfNeeded()` | Scrolls the element into view when necessary. | `await submit.scrollIntoViewIfNeeded();` |
+| `screenshot()` | Saves a screenshot of the matched element. | `await submit.screenshot({ path: "submit.png" });` |
+| `waitFor()` | Waits for a locator state such as `visible`, `hidden`, `attached`, or `detached`. | `await submit.waitFor({ state: "visible" });` |
+
+### E. Element State and Information Methods
+
+| Method | Detailed description | Example |
+|---|---|---|
+| `isVisible()` | Checks whether the element is visible **at the time of the call**; returns a boolean. | `const visible = await submit.isVisible();` |
+| `isHidden()` | Checks whether the element is hidden or absent; returns a boolean. | `const hidden = await submit.isHidden();` |
+| `isEnabled()` | Checks whether the element is enabled; returns a boolean. | `const enabled = await submit.isEnabled();` |
+| `isDisabled()` | Checks whether the element is disabled; returns a boolean. | `const disabled = await submit.isDisabled();` |
+| `isEditable()` | Checks whether the element is editable; returns a boolean. | `const editable = await name.isEditable();` |
+| `innerText()` | Reads rendered text from the element. | `const text = await heading.innerText();` |
+| `textContent()` | Reads DOM text content, which can include text from hidden descendants. | `const text = await heading.textContent();` |
+| `count()` | Counts the elements currently matching the locator. | `const total = await items.count();` |
+
+### F. Locator Filtering and Indexing Methods
+
+| Method | Detailed description | Example |
+|---|---|---|
+| `first()` | Narrows a locator to the first matching element. | `items.first()` |
+| `last()` | Narrows a locator to the last matching element. | `items.last()` |
+| `nth(0)` | Narrows a locator to the first matching element; indexing starts at zero. | `items.nth(0)` |
+| `nth(1)` | Narrows a locator to the second matching element. | `items.nth(1)` |
+| `filter({ hasText: "Vivek" })` | Keeps only matching elements containing the specified text. | `rows.filter({ hasText: "Vivek" })` |
+| `locator("input")` | Finds matching descendant inputs inside the current locator. | `form.locator("input")` |
+| `getByRole("button")` | Finds matching descendants based on their accessible role. | `form.getByRole("button")` |
+
+> **Tip:** Prefer unique, meaningful locators over `nth()` where possible. A page layout change can alter element order.
+
+## 2. Assertion Methods
+
+Use locator assertions as `await expect(locator).matcher(...)`. Unlike state-checking methods such as `isVisible()`, Playwright's locator assertions automatically retry.
+
+### A. Input Box Assertions
+
+| Assertion | Detailed description | Example |
+|---|---|---|
+| `toBeVisible()` | Verifies the input is visible on the page. | `await expect(name).toBeVisible();` |
+| `toBeHidden()` | Verifies the element is hidden or absent. | `await expect(name).toBeHidden();` |
+| `toBeEnabled()` | Verifies the field is enabled. | `await expect(name).toBeEnabled();` |
+| `toBeDisabled()` | Verifies the field is disabled. | `await expect(name).toBeDisabled();` |
+| `toBeEditable()` | Verifies the field can be edited (not read-only or disabled). | `await expect(name).toBeEditable();` |
+| `toBeEmpty()` | Verifies an input has no value, or an applicable element has no text. | `await expect(name).toBeEmpty();` |
+| `toHaveValue()` | Verifies the current value of an input, textarea, or select. | `await expect(name).toHaveValue("Vivek");` |
+| `toHaveAttribute()` | Verifies an HTML attribute has the expected value. | `await expect(name).toHaveAttribute("maxlength", "10");` |
+| `toBeFocused()` | Verifies the element has keyboard focus. | `await expect(name).toBeFocused();` |
+| `toHaveJSProperty()` | Verifies a JavaScript property on the element. | `await expect(name).toHaveJSProperty("readOnly", true);` |
+
+### B. Radio Button and Checkbox Assertions
+
+| Assertion | Detailed description | Example |
+|---|---|---|
+| `toBeChecked()` | Verifies the radio button or checkbox is selected. | `await expect(male).toBeChecked();` |
+| `not.toBeChecked()` | Verifies the control is not selected. | `await expect(female).not.toBeChecked();` |
+| `toBeEnabled()` | Verifies the control is enabled. | `await expect(male).toBeEnabled();` |
+| `toBeDisabled()` | Verifies the control is disabled. | `await expect(male).toBeDisabled();` |
+| `toBeVisible()` | Verifies the control is visible. | `await expect(male).toBeVisible();` |
+| `toHaveAttribute()` | Verifies an attribute such as `value` or `type`. | `await expect(male).toHaveAttribute("value", "Male");` |
+| `toBeChecked({ indeterminate: true })` | Verifies a checkbox is in the indeterminate (neither fully checked nor unchecked) state. | `await expect(box).toBeChecked({ indeterminate: true });` |
+
+### C. Native Dropdown Assertions
+
+| Assertion | Detailed description | Example |
+|---|---|---|
+| `toHaveValue("IN")` | Verifies the selected option's HTML value. | `await expect(country).toHaveValue("IN");` |
+| `toHaveValues(["A", "B"])` | Verifies the selected values of a multiple-select element. | `await expect(subjects).toHaveValues(["A", "B"]);` |
+| `toBeEnabled()` | Verifies the dropdown is enabled. | `await expect(country).toBeEnabled();` |
+| `toBeDisabled()` | Verifies the dropdown is disabled. | `await expect(country).toBeDisabled();` |
+| `toHaveCount(5)` | Verifies the locator matches five elements; apply to an **options locator**, not the dropdown itself. | `await expect(country.locator("option")).toHaveCount(5);` |
+
+### D. Text and Element Assertions
+
+| Assertion | Detailed description | Example |
+|---|---|---|
+| `toHaveText()` | Verifies the element's text matches the expected text. | `await expect(heading).toHaveText("Welcome");` |
+| `toContainText()` | Verifies the element contains the specified text. | `await expect(message).toContainText("Success");` |
+| `toHaveCount()` | Verifies the number of elements matching a locator. | `await expect(items).toHaveCount(3);` |
+| `toHaveClass()` | Verifies the class attribute matches the expected string or pattern. | `await expect(button).toHaveClass(/active/);` |
+| `toContainClass()` | Verifies that the class list contains the specified class or classes. | `await expect(button).toContainClass("active");` |
+| `toHaveCSS()` | Verifies the computed CSS property value. | `await expect(button).toHaveCSS("display", "block");` |
+| `toBeInViewport()` | Verifies the element is within the viewport. | `await expect(button).toBeInViewport();` |
+| `toHaveId()` | Verifies the element's ID. | `await expect(button).toHaveId("submit");` |
+
+> **Input tip:** Use `toHaveValue()` for text entered into `<input>` or `<textarea>`. Use `toHaveText()` or `toContainText()` for displayed text in elements such as `<div>`, `<span>`, or headings.
+
+### E. Page-Level Assertions
+
+These are used with `expect(page)`, not `expect(locator)`.
+
+| Assertion | Detailed description | Example |
+|---|---|---|
+| `toHaveURL()` | Verifies the current page URL; accepts a string or regular expression. | `await expect(page).toHaveURL(/dashboard/);` |
+| `toHaveTitle()` | Verifies the browser page's document title. | `await expect(page).toHaveTitle("Dashboard");` |   
     
-        Locator Method	Description
-        first()	Selects first matching element
-        last()	Selects last matching element
-        nth(0)	Selects first element
-        nth(1)	Selects second element
-        filter({ hasText: "Vivek" })	Filters elements by text
-        locator("input")	Finds matching descendant elements
-        getByRole("button")	Finds descendant elements by accessibility role
+
 
        2. Playwright Assertion Methods
        
