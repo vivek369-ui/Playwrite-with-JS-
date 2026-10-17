@@ -171,6 +171,17 @@ InputBox & RadioButton & DropDown & check Box & assertion :
 ### C. Native Dropdown Methods
 
 These methods work on native HTML `<select>` elements. Custom dropdowns such as React Select usually require clicking and selecting an option instead.
+selectOption() works only with native HTML <select> elements.
+Dropdown type	            HTML element	                  Playwright method
+1.Normal dropdown       	<select>	                        selectOption()
+
+2.React dropdown	   <input role="combobox">	              fill() + click() :
+    await page.locator("#react-select-3-input").fill("Uttar Pradesh");
+    await page.getByText("Uttar Pradesh", { exact: true }).click();
+    
+3. Custom dropdown(Bootstrap DD)	 <div> or other elements       click() + option selection  : 
+   await page.locator('#react-select-3-input').click();
+   await page.getByText("Uttar Pradesh", { exact: true }).click();
 
 | Method | Detailed description | Example |
 |---|---|---|
