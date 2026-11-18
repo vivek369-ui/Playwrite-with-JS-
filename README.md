@@ -293,7 +293,10 @@ These are used with `expect(page)`, not `expect(locator)`.
 |---|---|---|
 | `toHaveURL()` | Verifies the current page URL; accepts a string or regular expression. | `await expect(page).toHaveURL(/dashboard/);` |
 | `toHaveTitle()` | Verifies the browser page's document title. | `await expect(page).toHaveTitle("Dashboard");` |   
-    
+
+
+Date Picker : 
+              
 
 -----------------------------------------------------------------TS--------------------------------------------------------------------
 
