@@ -296,7 +296,11 @@ These are used with `expect(page)`, not `expect(locator)`.
 
 
 Date Picker : 
-              
+
+              1. direct using fill : 
+                 const fromDate = page.getByPlaceholder("yyyy-dd-mm").first();
+                   await fromDate.fill("2025-02-02");
+              2. Handle calender:
 
 -----------------------------------------------------------------TS--------------------------------------------------------------------
 
